@@ -46,7 +46,7 @@ body {
 	float: left;
 	margin-top: 5px;
 	font-size: 30px;
-	text-align: center;
+	text-align: left;
 }
 
 .candyPiece {
@@ -74,5 +74,28 @@ body {
 
 #reeses {
 	float: left;
+
+}
+
+.totalScoreBlock {
+	background-color: #ff9900;
+	clear: both;
+	float: left;
+	height: 40px;
+	width: 350px;
+	margin-left: 5px;
+	font-size: 37px;
+
+}
+
+.bottomBlock {
+	background-color: #ff9900;
+	clear: both;
+	float: left;
+	height: 200px;
+	width: 350px;
+	margin-left: 5px;
+	margin-top: 5px;
+	font-size: 40px;
 
 }
