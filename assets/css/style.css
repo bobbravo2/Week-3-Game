@@ -27,3 +27,26 @@ body {
 	font-family: 'comic-sans';
 
 }
+
+#holdsCompGuess {
+	background-color: #ff3399;
+	height: 150px;
+	width: 350px;
+	margin: 5px;
+	float: left;
+	color: #66ff33
+;
+
+}
+
+#wins-losses {
+	background-color: #9966ff;
+	width: 190px;
+	height: 150px;
+	float: left;
+	margin-top: 5px;
+	font-size: 30px;
+	text-align: center;
+}
+
+.candyPieces
