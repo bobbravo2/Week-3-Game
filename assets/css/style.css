@@ -34,8 +34,8 @@ body {
 	width: 350px;
 	margin: 5px;
 	float: left;
-	color: #66ff33
-;
+	color: #66ff33;
+	font-size: 40px;
 
 }
 
@@ -49,4 +49,30 @@ body {
 	text-align: center;
 }
 
-.candyPieces
+.candyPiece {
+	
+	margin: 0 5px 5px 5px;
+	width: 150px;
+	height: 150px;
+		
+}
+
+#kit-kat {
+	clear: both;
+	float:left;
+}
+
+#gummy-bear {
+	float:left;
+
+}
+
+#skittles {
+	float: left;
+
+}
+
+#reeses {
+	float: left;
+
+}
