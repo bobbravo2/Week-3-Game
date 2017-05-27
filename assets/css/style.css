@@ -1,0 +1,29 @@
+body {
+
+	background-image: url("../images/candybackground.jpg")
+
+}
+
+
+#main-heading {
+	background-color: #669900;
+	color: white;
+	width: 260px;
+	height: 50px;
+	margin: 5px;
+	padding: 25px;
+	text-align: center;
+	font-size: 35px;
+
+}
+
+#instructions {
+	background-color: #ff6666;
+	height: 500px;
+	width: 550px;
+	margin-left: 5px;
+	font-size: 25px;
+	color: #003399;
+	font-family: 'comic-sans';
+
+}

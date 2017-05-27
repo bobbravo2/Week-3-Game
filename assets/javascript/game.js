@@ -16,6 +16,12 @@ $(function(){
 	function runProgram(){
 
 		//event handler that detects clicks
+		$("#crystal1").on("click" function() {
+
+
+
+
+		})
 
 
 		if (totalScore === randomCompNumber) {
