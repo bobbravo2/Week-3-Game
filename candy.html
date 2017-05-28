@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 
 	<html>
-	
 		<head>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-			<script src=""></script>
 			<link rel = "stylesheet" href = "assets/css/reset.css">
 			<link rel = "stylesheet" href = "assets/css/style.css">
 		</head>
@@ -65,6 +62,54 @@
 				<span id = "randomNumber">0</span>
 		
 			</div>
+
+		<!--JAVASCRIPT-->
+			<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+			<script type='text/javascript'>
+
+			//variables that hold the information for the game
+			var totalScore = 0;
+			var wins = 0;
+			var losses = 0;
+
+
+
+			//function that runs the program if the user wins or losses
+
+			function runProgram(){
+
+			//event handler that creates a random number from 19 to 120
+				var randomCompNumber = Math.floor(Math.random() * 120) + 19;
+
+				$("")
+
+				//event handler that detects clicks
+				$(".candyPiece").on("click", function() {
+					var randomUserNumber = Math.floor(Math.random() * 12) + 1;
+					console.log(randomUserNumber)
+				})
+
+
+				if (totalScore === randomCompNumber) {
+
+					wins++;
+					newRandom();
+					runProgram();
+
+					}
+
+				if (totalScore > randomCompNumber) {
+
+					losses++;
+					runProgram();
+
+					}   
+
+
+				}
+
+
+		</script>
 
 		</body>
 
