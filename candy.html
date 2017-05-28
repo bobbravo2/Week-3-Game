@@ -64,14 +64,10 @@
 			</div>
 
 		<!--JAVASCRIPT-->
-			<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-			<script type='text/javascript'>
-
-			//variables that hold the information for the game
-			var totalScore = 0;
-			var wins = 0;
-			var losses = 0;
-
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script type='text/javascript'>
+		$(document).ready(function(){
+			console.log('ready!')
 
 
 			//function that runs the program if the user wins or losses
@@ -81,13 +77,18 @@
 			//event handler that creates a random number from 19 to 120
 				var randomCompNumber = Math.floor(Math.random() * 120) + 19;
 
-				$("")
+			//variables that hold the information for the game
+			var wins = 0;
+			var losses = 0;
+			var totalScore = 0;
+
+				$("#computerGuess").text(randomCompNumber);
 
 				//event handler that detects clicks
-				$(".candyPiece").on("click", function() {
+				$(".candyPiece").click(function() {
 					var randomUserNumber = Math.floor(Math.random() * 12) + 1;
-					console.log(randomUserNumber)
-				})
+					$(randomeUserNumber).text("#total-Score");
+					})
 
 
 				if (totalScore === randomCompNumber) {
@@ -103,13 +104,14 @@
 					losses++;
 					runProgram();
 
-					}   
+					} 
+
+				}  
 
 
-				}
+				})
 
-
-		</script>
+			</script>
 
 		</body>
 
