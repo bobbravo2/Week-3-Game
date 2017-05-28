@@ -44,10 +44,10 @@
 
 			</div>
 
-			<img id="kit-kat" class="candyPiece" src="assets/images/kit-kat.jpg">
-			<img id="gummy-bear" class="candyPiece" src="assets/images/gummybears.jpg">
-			<img id="skittles" class="candyPiece" src="assets/images/skittles.jpg">
-			<img id="reeses" class="candyPiece" src="assets/images/reeses.png">
+			<img id="kit-kat" class = "candyPiece" src="assets/images/kit-kat.jpg"/>
+			<img id="gummy-bear" class = "candyPiece" src="assets/images/gummybears.jpg"/>
+			<img id="skittles" class = "candyPiece" src="assets/images/skittles.jpg"/>
+			<img id="reeses" class = "candyPiece" src="assets/images/reeses.png"/>
 			
 			<div class="totalScoreBlock">
 
@@ -59,41 +59,54 @@
 
 			<div class="bottomBlock">
 
-				<span id = "randomNumber">0</span>
+				<span id = "randomNumber"></span>
 		
 			</div>
 
 		<!--JAVASCRIPT-->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 		<script type='text/javascript'>
+
 		$(document).ready(function(){
-			console.log('ready!')
 
-
+			var totalScore = 0;
+			var wins = 0;
+			var losses = 0;
+		
 			//function that runs the program if the user wins or losses
 
-			function runProgram(){
+			function runProgram() {
 
 			//event handler that creates a random number from 19 to 120
 				var randomCompNumber = Math.floor(Math.random() * 120) + 19;
 
 			//variables that hold the information for the game
-			var wins = 0;
-			var losses = 0;
-			var totalScore = 0;
-
+			
+				
+				//will show computer generated number from 1 - 120
 				$("#computerGuess").text(randomCompNumber);
 
-				//event handler that detects clicks
-				$(".candyPiece").click(function() {
-					var randomUserNumber = Math.floor(Math.random() * 12) + 1;
-					$(randomeUserNumber).text("#total-Score");
-					})
+				//create an array to include numbers for candy pics
+				var numberOptions = [Math.floor(Math.random() * 4) + 2, Math.floor(Math.random() * 7) + 4, Math.floor(Math.random() * 5) + 7, Math.floor(Math.random() * 1) + 9]
 
+				$(numberOptions).each(function() {
+					candyPiece.attr("candyNumberValue", numberOptions[i]);	
+				})
+
+
+			}
+
+				//event handler that detects clicks
+				$(".candyPiece").on("click", function() {
+
+					var candyValue = ($(this).attr("candyNumberValue"));
+					candyValue = parseInt(candyValue);
+					totalScore += candyValue;
 
 				if (totalScore === randomCompNumber) {
 
 					wins++;
+					a
 					newRandom();
 					runProgram();
 
@@ -106,8 +119,9 @@
 
 					} 
 
-				}  
+					})
 
+				  
 
 				})
 
