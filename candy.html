@@ -53,7 +53,7 @@
 			
 			<div class="totalScoreBlock">
 
-				<p>Your total score :<span id = "total-Score"></span></p>
+				<p>Your total score :</p>
 
 			</div>
 
@@ -61,7 +61,7 @@
 
 			<div class="bottomBlock">
 
-				<span id = "randomNumber"></span>
+				<p><span id = "total-Score"></span></p>
 		
 			</div>
 
@@ -70,14 +70,14 @@
 		<script type='text/javascript'>
 
 		$(document).ready(function(){
-
-			var totalScore = 0;
-			var wins = 0;
-			var losses = 0;
 		
 			//function that runs the program if the user wins or losses
 
 			function runProgram() {
+
+			var totalScore = 0;
+			var wins = 0;
+			var losses = 0;
 
 			//event handler that creates a random number from 19 to 120
 				var randomCompNumber = Math.floor(Math.random() * 101) + 19;
@@ -94,6 +94,7 @@
 
 			//event handler that detects clicks
 				$(".candyPiece").on("click", function() {
+
 					var candyValue = ($(this).attr("candyNumberValue"));
 					candyValue = parseInt(candyValue);
 					totalScore += candyValue;
@@ -105,17 +106,19 @@
 						wins++;
 						$('#wins').text(wins);
 						$('#alert-Outcome').text("You Win!!!");
-						wins = 0;
-						runProgram();
 
-					}	
-
+					
 					if (totalScore > randomCompNumber) {
 						losses++;
 						$('#losses').text(losses);
 						$('#alert-Outcome').text("You Lose!!!");
-						losses = 0;
-						runProgram();
+
+					}
+
+					} else {
+						
+
+
 					}
 
 					}) 
