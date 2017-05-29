@@ -80,9 +80,9 @@
 
 			//function that runs when user wins or losses. it will clear out the wins, losses and messages
 				function clearText() {
+					wins--;
+					losses--;
 					$('#alert-Outcome').hide();
-					$('#losses').text(0);
-					$('#wins').text(0)
 				}
 
 			//event handler that creates a random number from 19 to 120
@@ -113,6 +113,7 @@
 						$('#wins').text(wins);
 						$('#alert-Outcome').text("You Win!!!");
 						runProgram();
+						clearText();
 					}
 
 					
@@ -120,7 +121,8 @@
 						losses++;
 						$('#losses').text(losses);
 						$('#alert-Outcome').text("You Lose!!!");
-						runProgram()
+						runProgram();
+						clearText();
 					}
 
 					}) 
