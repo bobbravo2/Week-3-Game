@@ -72,12 +72,18 @@
 		$(document).ready(function(){
 		
 			//function that runs the program if the user wins or losses
-
 			function runProgram() {
 
 			var totalScore = 0;
 			var wins = 0;
 			var losses = 0;
+
+			//function that runs when user wins or losses. it will clear out the wins, losses and messages
+				function clearText() {
+					$('#alert-Outcome').hide();
+					$('#losses').text(0);
+					$('#wins').text(0)
+				}
 
 			//event handler that creates a random number from 19 to 120
 				var randomCompNumber = Math.floor(Math.random() * 101) + 19;
@@ -86,7 +92,7 @@
 				$("#computerGuess").text(randomCompNumber);
 
 			//create an array to include numbers for candy pics
-				var numberOptions = [Math.floor(Math.random() * 4) + 2, Math.floor(Math.random() * 7) + 4, Math.floor(Math.random() * 5) + 7, Math.floor(Math.random() * 1) + 9]
+				var numberOptions = [Math.floor(Math.random() * 11) + 1]
 
 				for (var i = 0; i < numberOptions.length; i++) {
 					$(".candyPiece").attr("candyNumberValue", numberOptions[i]);	
@@ -106,24 +112,20 @@
 						wins++;
 						$('#wins').text(wins);
 						$('#alert-Outcome').text("You Win!!!");
+						runProgram();
+					}
 
 					
 					if (totalScore > randomCompNumber) {
 						losses++;
 						$('#losses').text(losses);
 						$('#alert-Outcome').text("You Lose!!!");
-
-					}
-
-					} else {
-						
-
-
+						runProgram()
 					}
 
 					}) 
 
-				  } runProgram();
+				 } runProgram();
 
 				})
 
