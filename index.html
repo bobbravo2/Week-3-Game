@@ -46,10 +46,10 @@
 
 			</div>
 
-			<img id="kit-kat" class = "candyPiece" src="assets/images/kit-kat.jpg"/>
-			<img id="gummy-bear" class = "candyPiece" src="assets/images/gummybears.jpg"/>
-			<img id="skittles" class = "candyPiece" src="assets/images/skittles.jpg"/>
-			<img id="reeses" class = "candyPiece" src="assets/images/reeses.png"/>
+			<img id="candy1" class = "candyPiece" src="assets/images/kit-kat.jpg"/>
+			<img id="candy2" class = "candyPiece" src="assets/images/gummybears.jpg"/>
+			<img id="candy3" class = "candyPiece" src="assets/images/skittles.jpg"/>
+			<img id="candy4" class = "candyPiece" src="assets/images/reeses.png"/>
 			
 			<div class="totalScoreBlock">
 
@@ -70,33 +70,38 @@
 		<script type='text/javascript'>
 
 		$(document).ready(function(){
-		
-			//function that runs the program if the user wins or losses
-			function runProgram() {
 
 			var totalScore = 0;
 			var wins = 0;
 			var losses = 0;
+			var randomCompNumber;
+			var numberOptions;
+
+		
+			//function that runs the program if the user wins or losses
+			function runProgram() {
 
 			//function that runs when user wins or losses. it will clear out the wins, losses and messages
-				function clearText() {
-					wins--;
-					losses--;
-					$('#alert-Outcome').hide();
-				}
+				// function clearText() {
+					//wins--;
+					//losses--;
+					//$('#alert-Outcome').hide();
+				//}
 
 			//event handler that creates a random number from 19 to 120
-				var randomCompNumber = Math.floor(Math.random() * 101) + 19;
+				randomCompNumber = Math.floor(Math.random() * 101) + 19;
 							
 			//will show computer generated number from 1 - 120
 				$("#computerGuess").text(randomCompNumber);
 
 			//create an array to include numbers for candy pics
-				var numberOptions = [Math.floor(Math.random() * 11) + 1]
+				numberOptions = [Math.floor(Math.random() * 11) + 1]
 
 				for (var i = 0; i < numberOptions.length; i++) {
-					$(".candyPiece").attr("candyNumberValue", numberOptions[i]);	
+					$("#candy").attr("candyNumberValue", numberOptions[i]);	
 				}
+
+			} runProgram();
 
 			//event handler that detects clicks
 				$(".candyPiece").on("click", function() {
@@ -113,8 +118,7 @@
 						$('#wins').text(wins);
 						$('#alert-Outcome').text("You Win!!!");
 						runProgram();
-						clearText();
-					}
+						}
 
 					
 					if (totalScore > randomCompNumber) {
@@ -122,12 +126,9 @@
 						$('#losses').text(losses);
 						$('#alert-Outcome').text("You Lose!!!");
 						runProgram();
-						clearText();
-					}
+						}
 
 					}) 
-
-				 } runProgram();
 
 				})
 
