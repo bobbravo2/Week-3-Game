@@ -96,12 +96,12 @@
 			//will loop through and create random numbers for our pics
 				for (var i = 0; i < 4; i++) {
 					var rand = Math.floor(Math.random() * 20);
-					$("#candy").attr("candyNumberValue", rand);
+					$(".candyPiece").attr("candyNumberValue", rand);
 					}
 
 			} runProgram();
 
-					//event handler that detects clicks
+			//event handler that detects clicks
 				$(".candyPiece").on("click", function() {
 
 					candyValue = ($(this).attr("candyNumberValue"));
