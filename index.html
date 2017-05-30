@@ -75,12 +75,10 @@
 			var wins = 0;
 			var losses = 0;
 			var randomCompNumber;
-			var numberOptions;
 			var candyValue;
 
-		
 			//function that runs the program if the user wins or losses
-			function runProgram() {
+				function runProgram() {
 
 			//function that runs when user wins or losses. it will clear out the wins, losses and messages
 				// function clearText() {
@@ -95,17 +93,15 @@
 			//will show computer generated number from 1 - 120
 				$("#computerGuess").text(randomCompNumber);
 
+			//will loop through and create random numbers for our pics
 				for (var i = 0; i < 4; i++) {
-					var rand = Math.floor(Math.random() * 12)
-					$("#candy"+ i).attr("candyNumberValue", rand);
+					var rand = Math.floor(Math.random() * 20);
+					$("#candy").attr("candyNumberValue", rand);
 					}
-
-				totalScore = 0;
-
 
 			} runProgram();
 
-			//event handler that detects clicks
+					//event handler that detects clicks
 				$(".candyPiece").on("click", function() {
 
 					candyValue = ($(this).attr("candyNumberValue"));
@@ -130,6 +126,9 @@
 
 						
 					}) 
+
+
+			
 
 				})
 
