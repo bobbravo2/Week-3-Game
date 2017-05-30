@@ -38,18 +38,18 @@
 
 			<div id="wins-losses">
 
-				<p>Wins :<span id="wins"></span></p>
+				<p>Wins:<span id="wins"></span></p>
 				<br>
-				<p>Losses :<span id="losses"></span></p>
+				<p>Losses:<span id="losses"></span></p>
 				<br>
 				<p><span id='alert-Outcome'></span></p>
 
 			</div>
 
-			<img id="candy1" class = "candyPiece" src="assets/images/kit-kat.jpg"/>
-			<img id="candy2" class = "candyPiece" src="assets/images/gummybears.jpg"/>
-			<img id="candy3" class = "candyPiece" src="assets/images/skittles.jpg"/>
-			<img id="candy4" class = "candyPiece" src="assets/images/reeses.png"/>
+			<img id="candy-1" class = "candyPiece" src="assets/images/kit-kat.jpg"/>
+			<img id="candy-2" class = "candyPiece" src="assets/images/gummybears.jpg"/>
+			<img id="candy-3" class = "candyPiece" src="assets/images/skittles.jpg"/>
+			<img id="candy-4" class = "candyPiece" src="assets/images/reeses.png"/>
 			
 			<div class="totalScoreBlock">
 
@@ -76,6 +76,7 @@
 			var losses = 0;
 			var randomCompNumber;
 			var numberOptions;
+			var candyValue;
 
 		
 			//function that runs the program if the user wins or losses
@@ -98,26 +99,30 @@
 				numberOptions = [Math.floor(Math.random() * 11) + 1]
 
 				for (var i = 0; i < numberOptions.length; i++) {
-					$("#candy").attr("candyNumberValue", numberOptions[i]);	
-				}
+					$("#candy-1").attr("candyNumberValue", numberOptions[i]);
+					$("#candy-2").attr("candyNumberValue", numberOptions[i]);
+					$("#candy-3").attr("candyNumberValue", numberOptions[i]);
+					$("#candy-4").attr("candyNumberValue", numberOptions[i]);
+					}
+
+				totalScore = 0;
+
 
 			} runProgram();
 
 			//event handler that detects clicks
 				$(".candyPiece").on("click", function() {
 
-					var candyValue = ($(this).attr("candyNumberValue"));
+					candyValue = ($(this).attr("candyNumberValue"));
 					candyValue = parseInt(candyValue);
 					totalScore += candyValue;
 					$('#total-Score').text(totalScore)
 				
-					
 
 					if (totalScore === randomCompNumber) {
 						wins++;
 						$('#wins').text(wins);
 						$('#alert-Outcome').text("You Win!!!");
-						runProgram();
 						}
 
 					
@@ -125,8 +130,10 @@
 						losses++;
 						$('#losses').text(losses);
 						$('#alert-Outcome').text("You Lose!!!");
-						runProgram();
+						
 						}
+						
+						runProgram();
 
 					}) 
 
