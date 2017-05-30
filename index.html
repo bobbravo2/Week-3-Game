@@ -95,14 +95,9 @@
 			//will show computer generated number from 1 - 120
 				$("#computerGuess").text(randomCompNumber);
 
-			//create an array to include numbers for candy pics
-				numberOptions = [Math.floor(Math.random() * 11) + 1]
-
-				for (var i = 0; i < numberOptions.length; i++) {
-					$("#candy-1").attr("candyNumberValue", numberOptions[i]);
-					$("#candy-2").attr("candyNumberValue", numberOptions[i]);
-					$("#candy-3").attr("candyNumberValue", numberOptions[i]);
-					$("#candy-4").attr("candyNumberValue", numberOptions[i]);
+				for (var i = 0; i < 4; i++) {
+					var rand = Math.floor(Math.random() * 12)
+					$("#candy"+ i).attr("candyNumberValue", rand);
 					}
 
 				totalScore = 0;
@@ -132,9 +127,8 @@
 						$('#alert-Outcome').text("You Lose!!!");
 						
 						}
-						
-						runProgram();
 
+						
 					}) 
 
 				})
